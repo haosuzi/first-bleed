@@ -10,31 +10,32 @@
     <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./css/comment.css">
 </head>
-
+    
 <body class="le-body">
     <div class="container col-sm-4 col-sm-offset-4">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">后台管理系统</h3>
             </div>
+            
             <div class="panel-body">
                 <form class="form-horizontal" id="form">
                     <div class="form-group">
                         <label for="username" class="col-sm-3 control-label">用户名</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="username" placeholder="还不快输入用户名">
+                            <input type="username" name="username" class="form-control" id="username" placeholder="还不快输入用户名">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">密　码</label>
+                        <label for="password" name="password" class="col-sm-3 control-label">密　码</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="password" placeholder="还有密码">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="还有密码">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-5">
                             <button type="submit" class="btn btn-primary pull-left">登陆</button>
-                            <button type="submit" class="btn btn-default pull-right">重置</button>
+                            <button type="reset" class="btn btn-default pull-right">重置</button>
 
                         </div>
                     </div>
@@ -43,18 +44,17 @@
         </div>
     </div>
 
-
     <script src="./lib/jquery/jquery.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.js"></script>
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script>
         $(function () {
             $('#form').bootstrapValidator({
-                // feedbackIcons: {
-                //     valid: 'glyphicon glyphicon-ok',
-                //     invalid: 'glyphicon glyphicon-remove',
-                //     validating: 'glyphicon glyphicon-refresh'
-                // },
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
                 fields: {
                     username: {
                         validators: {
@@ -83,6 +83,25 @@
                 }
             });
         });
+
+        /*
+  * 2. 登录功能
+  *    表单校验插件会在表单提交时进行校验, 如果希望通过 ajax 提交
+  *    可以注册表单校验成功事件, 在事件中, 阻止默认的跳转提交, 通过 ajax 进行提交
+  * */
+        $('#form').on('success.form.bv',function(e){
+            e.preventDefault();
+            $.ajax({
+                type:'post',
+                url:'/employee/employeeLogin',
+                data:{
+                   $(" ")
+                },
+                success:function(){
+                
+                }
+            })
+        })
     </script>
 </body>
 

@@ -1,0 +1,10 @@
+$.ajax({
+    type:"get",
+    url:"/employee/checkRootLogin",
+    dateType:"json",
+    success:function(info){
+        if(info.erro===400){
+            loaction.href='login.html';
+        }
+    }
+})

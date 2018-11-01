@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>梳子</title>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/comment.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div class="ind-nav">
+        <!-- 标题 -->
+        <div class="header">
+            <a href="#">黑马28器</a>
+        </div>
+
+        <!-- 用户 -->
+        <div class="user">
+            <img src="./images/0108395a603e8ba80120121f0f673f.jpg@1280w_1l_2o_100sh.jpg" alt="">
+            <a href="#">梳子好</a>
+        </div>
+
+        <!-- 分类 -->
+        <div class="page">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-user"></i>用户管理</a>
+                </li>
+                <li class="fuck">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-list"></i>分类管理</a>
+                    <div class="lie">
+                        <a href="#">一级分类</a>
+                        <a href="#">二级分类</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="glyphicon glyphicon-tags"></i>商品管理</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <!-- 内容 -->
+    <div class="content">
+        <div class="nav">
+            <a id="suck" href="">
+                <i class="glyphicon glyphicon-align-justify"></i>
+            </a>
+            <a href="javascript:;" class="bitch">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </a>
+        </div>
+        <div class="cont">
+
+            <!-- 路径导航 -->
+            <div class="container">
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="#">管理系统</a>
+                    </li>
+                    <li class="active">首页</li>
+                </ol>、在移动端,click事件比以下哪个touch事件执行要更晚
+            </div>
+
+            <div class="pic">
+                <div id="left" class="left pull-left">
+                </div>
+                <div id="right" class="right pull-right"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 模态框 -->
+    <div  class="modal fade " tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">严重警告</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>是否确定再也不用口香糖</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button"  class="mmp btn btn-primary">确定</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+    <script src="./lib/jquery/jquery.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <script src="./lib/echarts/echarts.min.js"></script>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('left'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '指南'
+            },
+            tooltip: {},
+            legend: {
+                data: ['fuck', 'suck']
+            },
+            xAxis: {
+                data: ["一月", "二月", "三月", "四月", "五月", "六月"]
+            },
+            yAxis: {},
+            series: [{
+                name: 'fuck',
+                type: 'bar',
+                data: [500, 420, 360, 810, 710, 1020]
+            }, {
+                name: 'suck',
+                type: 'bar',
+                data: [800, 620, 960, 510, 410, 1020]
+            }
+            ]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        var chart = echarts.init(document.getElementById('right'));
+
+        option = {
+            title: {
+                text: '热门品牌销售',
+                subtext: '2018年11月',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['冈本', '杰士邦', '多乐士', '赤狐', '杜蕾斯']
+            },
+            series: [
+                {
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: 335, name: '冈本' },
+                        { value: 310, name: '杰士邦' },
+                        { value: 234, name: '多乐士' },
+                        { value: 135, name: '赤狐' },
+                        { value: 1548, name: '杜蕾斯' }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        chart.setOption(option);
+
+    </script>
+    <script>
+        $('.fuck').click(function () {
+            $(".lie").stop().slideToggle();
+        });
+
+        $("#suck").click(function (e) {
+            e.preventDefault();
+            $(".ind-nav").toggleClass("gun");
+            $(".content").toggleClass("gun");
+            $(".content .nav").toggleClass("gun");
+        });
+
+        $(".bitch").click(function(){
+            // alert(1);
+            $(".modal").modal("show");
+            // $('#myModal').modal(options)
+        })
+
+        $(".mmp").click(function(){
+            $.ajax({
+                type:"get",
+                url:"/employee/checkRootLogin",
+                dataType:"json",
+                success:function(info){
+                    console.log(info);
+                    if(info.success){
+                        loaciton.href="login.html";
+                    }
+                }
+
+            })
+        })
+    </script>
+</body>
+
+</html>
